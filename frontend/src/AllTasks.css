@@ -1,0 +1,97 @@
+.task-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 300px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 40px;
+}
+
+.task-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: calc(33.33% - 20px); /* Adjust width as needed for 3 items per row */
+    box-sizing: border-box;
+    position: relative; /* Position relative for absolute positioning of buttons */
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.602); /* Default background color for task boxes */
+}
+
+.complete-btn {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: #8BC34A; /* Green color for "Mark as Completed" button */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: 1; /* Ensure button is above the task content */
+    transition: transform 0.3s ease; /* Add transition for smooth transformation */
+}
+
+.complete-btn:hover {
+    background-color: #689F38; /* Darker shade of green on hover */
+    transform: scale(1.1); /* Scale up the button on hover */
+}
+
+.delete-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #FF5722; /* Red color for delete button */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: 1; /* Ensure delete button is above the task content */
+}
+
+.delete-btn:hover {
+    background-color: #E64A19; /* Darker shade of red on hover */
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px; /* Add margin-top for better spacing */
+}
+
+/* Placeholder animation class */
+.animate {
+    animation: star-animation 1s ease-in-out;
+}
+
+@keyframes star-animation {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+}
+/* Colorful ribbons and flowers animation */
+@keyframes ribbon-fall {
+    0% { transform: translateY(-100%); opacity: 0; }
+    100% { transform: translateY(100vh); opacity: 1; }
+}
+
+.ribbon {
+    position: absolute;
+    top: -20px; /* Adjust position to start above the task box */
+    left: calc(50% - 10px); /* Center the ribbon horizontally */
+    width: 15px; /* Adjust the width of the ribbon */
+    height: 150px; /* Adjust the height of the ribbon */
+    background: linear-gradient(45deg, #FF6347, #FFD700, #00FF00, #FF00FF); /* Gradient for bright colors */
+    animation: ribbon-fall 2s ease-in-out forwards; /* Adjust animation duration and properties as needed */
+}
+
+.ribbon:nth-child(2) {
+    animation-delay: 0.5s; /* Delay the animation for the second ribbon */
+}
+
+.ribbon:nth-child(3) {
+    animation-delay: 1s; /* Delay the animation for the third ribbon */
+}
+
+
