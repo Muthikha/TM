@@ -19,7 +19,7 @@ const App = () => {
             const response = await axios.get('https://tm-2.onrender.com/api/tasks');
             setTasks(response.data);
         } catch (error) {
-            console.error('Error fetching tasks:', error);
+            console.log('Error fetching tasks:', error);
         }
     };
 
