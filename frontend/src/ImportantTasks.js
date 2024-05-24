@@ -8,7 +8,7 @@ const ImportantTasks = () => {
     useEffect(() => {
         const fetchImportantTasks = async () => {
             try {
-                const response = await axios.get('http://localhost:5003/api/tasks');
+                const response = await axios.get('https://tm-2.onrender.com/api/tasks');
                 const tasks = response.data;
                 const filteredTasks = tasks.filter(task => task.important);
                 setImportantTasks(filteredTasks);

@@ -34,7 +34,7 @@ const AllTasks = ({ tasks, fetchTasks }) => {
     const handleEditSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:5003/api/tasks/${editTaskId}`, editFormData);
+            await axios.put(`https://tm-2.onrender.com/api/tasks/${editTaskId}`, editFormData);
             setEditTaskId(null);
             fetchTasks(); // Refresh tasks list
         } catch (error) {
@@ -48,7 +48,7 @@ const AllTasks = ({ tasks, fetchTasks }) => {
 
     const handleDeleteClick = async (taskId) => {
         try {
-            await axios.delete(`http://localhost:5003/api/tasks/${taskId}`);
+            await axios.delete(`https://tm-2.onrender.com/api/tasks/${taskId}`);
             fetchTasks(); // Refresh tasks list after deletion
         } catch (error) {
             console.error('Error deleting task:', error);
@@ -58,7 +58,7 @@ const AllTasks = ({ tasks, fetchTasks }) => {
     const handleCompleteClick = async (task) => {
         if (!task.completed) {
             try {
-                await axios.put(`http://localhost:5003/api/tasks/${task.id}`, { ...task, completed: true });
+                await axios.put(`https://tm-2.onrender.com/api/tasks/${task.id}`, { ...task, completed: true });
                 fetchTasks(); // Refresh tasks list after marking as completed
                 setCompletedAnimation(true); // Trigger animation
                 confetti(); // Trigger the confetti effect

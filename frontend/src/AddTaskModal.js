@@ -22,7 +22,7 @@ const AddTaskModal = ({ isOpen, onClose, onTaskAdded }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5003/api/tasks', formData);
+            await axios.post('https://tm-2.onrender.com/api/tasks', formData);
             onTaskAdded();
             onClose();
         } catch (error) {

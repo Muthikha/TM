@@ -19,7 +19,7 @@ const SignupForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5003/api/signup', formData);
+            const response = await axios.post('https://tm-2.onrender.com/api/signup', formData);
             alert('User created successfully');
             setFormData({ username: '', password: '', email: '' }); 
         } catch (error) {
